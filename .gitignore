@@ -32,3 +32,8 @@ build/
 
 ### mac_system_file
 .DS_Store
+
+.mvn/
+src/test/
+mvnw
+mvnw.cmd
