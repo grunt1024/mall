@@ -1,5 +1,7 @@
 package com.storm.mall.common.api;
 
+import org.springframework.boot.system.ApplicationPid;
+
 /**
  * @Description 接口通用返回类
  * @Author ZhangHua
@@ -19,6 +21,12 @@ public class ApiResponse{
         this.data = data;
     }
 
+
+    public ApiResponse(Object data){
+        this.code = 200L;
+        this.message = "成功";
+        this.data = data;
+    }
 
     public long getCode() {
         return code;

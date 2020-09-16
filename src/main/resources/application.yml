@@ -1,14 +1,16 @@
 spring:
   datasource:
+    driver: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
-    password: root123456
+    password: 123456
+
+
 
   redis:
-    host: 101.132.68.204 # Redis服务器地址
+    host: 127.0.0.1 # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
-    password: 123456 # Redis服务器连接密码（默认为空）
     jedis:
       pool:
         max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
@@ -25,3 +27,11 @@ redis:
       authCode: "authCode:"
     expire:
       authCode: 120 # 验证码超期时间
+
+
+# 自定义jwt key
+jwt:
+  tokenHeader: "Authorization" #JWT存储的请求头
+  secret: "12123423421432141324324" #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24)
+  tokenHead: Bearer  #JWT负载中拿到开头
